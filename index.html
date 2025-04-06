@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALOYASHOP - E-commerce</title>
+    <title>side bar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+     rel='stylesheet'>
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+
+
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">ALOYASHOP</a>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Rechercher">
+            <button class="btn btn-light" type="submit">🔍</button>
+        </form>
+        <div>
+            <a href="#" class="nav-link d-inline">🛒</a>
+            <a href="#" class="nav-link d-inline">👤</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Bannière promo -->
+<div class="banner">
+    <h2>🔥 Promo en cours !</h2>
+    <p>Offres spéciales valables encore pendant :</p>
+    <p class="countdown" id="countdown"></p>
+</div>
+<div class="container">
+    <div class="sidebar">
+        <ul> 
+            <li>
+                <a href="#" class="nav-link">
+                    <span class="item-icon">
+                        <i class="bx bx-home"></i>
+                    </span>
+                    <span class="item-txt">Home</span>
+                 </a>
+             </li>
+             <li>
+                <a href="#" class="nav-link">
+                    <span class="item-icon">
+                        <i class="bx bxs-info-circle"></i>
+                </span>
+                <span class="item-txt">About</span>
+                </a>
+             </li>
+     <li>
+         <a href="#" class="nav-link">
+          <span class="item-icon">
+           <i class="bx bx-task"></i>
+         </span>
+           <span class="item-txt">Services</span>
+         </a>
+    </li>
+            <li>
+                <a href="#" class="nav-link">
+                    <span class="item-icon">
+                        <i class="bx bxs-contact"></i>
+                    </span>
+                    <span class="item-txt">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- Section Produits -->
+<div class="container mt-4">
+    <h3 class="text-center">Offres du Jour</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card product-card p-3">
+                <img src="https://via.placeholder.com/250" class="card-img-top">
+                <div class="card-body text-center">
+
+                    <h5 class="card-title">PC HP DUAL CORE</h5>
+                    <p class="text-danger">75000 (-57%)</p>
+                    <button class="btn btn-primary">Acheter</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card product-card p-3">
+                <img src="https://via.placeholder.com/250" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mini Gadgets</h5>
+                    <p class="text-danger">234 XOF (-55%)</p>
+                    <button class="btn btn-primary">Acheter</button>
+                    <a href="produit.html" class="btn btn-primary">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Script du compte à rebours -->
+<script>
+    function countdownTimer() {
+        const promoEnd = new Date("Feb 8, 2025 07:59:00").getTime();
+        const x = setInterval(() => {
+            let now = new Date().getTime();
+            let distance = promoEnd - now;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "j" + hours + "h" + minutes+ "m" + seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Promo terminée !";
+            }
+        }, 1000);
+    }
+    countdownTimer();
+</script>
+
+
+</body>
+</html> 

@@ -1,0 +1,27 @@
+
+body {
+    background-color: #f8f9fa;
+}
+.navbar {
+    background-color: #ff69b4 !important;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.banner {
+    background: linear-gradient(to right, #ff69b4, #add8e6);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.product-card {
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+.countdown {
+    font-size: 20px;
+    font-weight: bold;
+}
